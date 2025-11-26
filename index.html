@@ -1,165 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI - DevHelper | by codemasteryakash</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevAura • by Akash</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #ccc;
-            color: #000;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        header {
+            background: #f4f4f4;
+            color: #222;
+            font-family: "Segoe UI", sans-serif;
             display: flex;
             flex-direction: column;
-            padding: 10px;
-            background-color: #000;
-            color: yellow;
+            min-height: 100vh;
         }
 
+        /* HEADER */
+        header {
+            background: #000;
+            color: #ffd700;
+            padding: 15px 25px;
+            border-bottom: 3px solid #ffd700;
+        }
         .top {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: space-between;
-            background-color: #ccc;
-            color: black;
-            padding: 20px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .search-bar input {
+            padding: 8px 14px;
+            width: 260px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+        .auth button {
+            padding: 8px 16px;
+            background: #ffd700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
         }
 
-        header nav ul {
+        /* NAV */
+        nav.main-nav {
+            margin-top: 8px;
+        }
+        nav.main-nav ul {
             display: flex;
-            justify-content: space-between;
-            padding: 10px;
             list-style: none;
+            gap: 25px;
         }
-
-        header nav ul li a {
+        nav.main-nav ul li a {
+            color: #ffd700;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
+        /* LAYOUT */
         .layout {
             display: flex;
+            width: 100%;
         }
 
-        .side-bar {
-            width: 20%;
-            background-color: antiquewhite;
+        /* SIDEBAR */
+        aside.sidebar {
+            width: 18%;
+            background: #fffaf0;
             border-right: 2px solid #000;
-            height: 100vh;
-            padding-top: 12px;
+            min-height: 100vh;
+            padding: 20px 0;
         }
-
-        .side-bar nav ul {
-            display: flex;
+        aside.sidebar ul {
             list-style: none;
-            flex-direction: column;
         }
-
-        .side-bar nav ul li {
-            text-align: center;
-        }
-
-        .side-bar nav ul li a {
+        aside.sidebar ul li a {
             display: block;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 1.2rem;
+            padding: 14px 20px;
             border-bottom: 1px solid #000;
-
+            color: #222;
+            text-decoration: none;
+            font-size: 1.1rem;
         }
 
+        /* MAIN CONTENT */
         main {
             flex: 1;
-            padding: 10px;
-            width: 60%;
+            padding: 25px;
+        }
+        .hero {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
         }
 
-        .card {
-            height: 200px;
-            width: 200px;
-            background-color: #000;
-            margin-top: 10px;
-            border: 10px solid gold;
-
-        }
-
-        .box {
+        /* GRID PROJECT BOX */
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin: auto;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
-        .hero nav ul {
-            display: flex;
-            justify-content: space-between;
-            list-style: none;
-            background-color: #fff;
-            padding: 10px;
+        .card {
+            height: 180px;
+            background: #000;
+            border: 5px solid #ffd700;
+            border-radius: 8px;
+            transition: 0.3s;
         }
-        .main-02 {
-            flex: 2;
+        .card:hover {
+            transform: scale(1.05);
+            border-color: orange;
+        }
+
+        /* RIGHT SIDEBAR */
+        aside.right-panel {
             width: 20%;
-            background-color: red;
+            background: #ffe7e7;
+            padding: 20px;
+        }
+        .right-panel h3 {
+            margin-bottom: 10px;
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="top">
-            <div class="logo">Ui Developer</div>
-            <div class="search-bar"><input type="text" name="search-bar" id="search-bar"></div>
-            <div class="btn">
+            <div class="logo">DevAura</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search your projects..." />
+            </div>
+            <div class="auth">
                 <button>Login</button>
             </div>
         </div>
-        <nav>
+
+        <nav class="main-nav">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Abouts</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Documents</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Kits</a></li>
+                <li><a href="#">Docs</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="layout">
-        <aside class="side-bar">
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Section</a></li>
-                    <li><a href="#">Button</a></li>
-                </ul>
-            </nav>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">UI Elements</a></li>
+                <li><a href="#">Buttons</a></li>
+                <li><a href="#">Cards</a></li>
+                <li><a href="#">Animations</a></li>
+            </ul>
         </aside>
 
         <main>
             <section class="hero">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Section</a></li>
-                        <li><a href="#">Button</a></li>
-                    </ul>
-                </nav>
-                <h2>Hello Everyone</h2>
-                <p>I'm a UI Developer You can see my project and kits that are build using html css and js.</p>
+                <h2>Hello, I'm Akash 👋</h2>
+                <p>Welcome to <strong>DevAura</strong> — your personal development hub where you store your daily UI work, projects, and experiments built using HTML, CSS, and JavaScript.</p>
             </section>
-            <section class="box">
+
+            <section class="project-grid">
+                <div class="card"></div>
+                <div class="card"></div>
                 <div class="card"></div>
                 <div class="card"></div>
                 <div class="card"></div>
@@ -168,12 +191,18 @@
                 <div class="card"></div>
             </section>
         </main>
-        <main class="main-02">
-            <section>
-                <h3>Hello Brothor hood</h3>
-            </section>
-        </main>
+
+        <aside class="right-panel">
+            <h3>Notes</h3>
+            <p>Add your quick notes, ideas, reminders here.</p>
+            <br />
+            <h3>Quick Actions</h3>
+            <ul>
+                <li>Add new project</li>
+                <li>Upload UI Kit</li>
+                <li>Edit profile</li>
+            </ul>
+        </aside>
     </div>
 </body>
-
 </html>
