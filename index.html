@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI - DevHelper | by codemasteryakash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ccc;
+            color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #000;
+            color: yellow;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ccc;
+            color: black;
+            padding: 20px;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .layout {
+            display: flex;
+        }
+
+        .side-bar {
+            width: 20%;
+            background-color: antiquewhite;
+            border-right: 2px solid #000;
+            height: 100vh;
+            padding-top: 12px;
+        }
+
+        .side-bar nav ul {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+        }
+
+        .side-bar nav ul li {
+            text-align: center;
+        }
+
+        .side-bar nav ul li a {
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #000;
+
+        }
+
+        main {
+            flex: 1;
+            padding: 10px;
+            width: 60%;
+        }
+
+        .card {
+            height: 200px;
+            width: 200px;
+            background-color: #000;
+            margin-top: 10px;
+            border: 10px solid gold;
+
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: auto;
+        }
+        .hero nav ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            background-color: #fff;
+            padding: 10px;
+        }
+        .main-02 {
+            flex: 2;
+            width: 20%;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="logo">Ui Developer</div>
+            <div class="search-bar"><input type="text" name="search-bar" id="search-bar"></div>
+            <div class="btn">
+                <button>Login</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Abouts</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Documents</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside class="side-bar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Section</a></li>
+                    <li><a href="#">Button</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section class="hero">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Section</a></li>
+                        <li><a href="#">Button</a></li>
+                    </ul>
+                </nav>
+                <h2>Hello Everyone</h2>
+                <p>I'm a UI Developer You can see my project and kits that are build using html css and js.</p>
+            </section>
+            <section class="box">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </section>
+        </main>
+        <main class="main-02">
+            <section>
+                <h3>Hello Brothor hood</h3>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
