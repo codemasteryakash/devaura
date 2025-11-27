@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Web Agency Hero with Infinite Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #020617, #020617 55%, #020617);
+            color: #e5e7eb;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(18px);
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
+            border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+        }
+
+        .navbar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            font-size: 1rem;
+        }
+
+        .logo-mark {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            border: 1px solid rgba(129, 140, 248, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            background: radial-gradient(circle at top, rgba(129, 140, 248, 0.35), transparent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            opacity: 0.9;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #4ade80;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 4vw, 3.1rem);
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .hero-title span.highlight {
+            background: linear-gradient(120deg, #60a5fa, #a855f7, #f97316);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-desc {
+            max-width: 620px;
+            margin: 0 auto 24px;
+            font-size: 0.98rem;
+            opacity: 0.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary,
+        .btn-ghost {
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: #fff;
+            box-shadow: 0 14px 35px rgba(79, 70, 229, 0.7);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 20px 45px rgba(79, 70, 229, 0.9);
+        }
+
+        .btn-ghost {
+            background: rgba(15, 23, 42, 0.95);
+            border-color: rgba(148, 163, 184, 0.6);
+            color: #e5e7eb;
+        }
+
+        .btn-ghost:hover {
+            transform: translateY(-1px);
+            background: rgba(15, 23, 42, 1);
+        }
+
+        /* TRAINS WRAPPER */
+        .trains-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .train-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-left: 4px;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            background:
+                radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent),
+                radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.16), transparent);
+            padding: 14px 0;
+        }
+
+        .track-left,
+        .track-right {
+            display: flex;
+            width: max-content;
+            gap: 16px;
+        }
+
+        .track-left {
+            animation: train-left 20s linear infinite;
+        }
+
+        .track-right {
+            animation: train-right 22s linear infinite;
+        }
+
+        .slide {
+            width: 220px;
+            height: 110px;
+            border-radius: 20px;
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid rgba(51, 65, 85, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 14px 16px;
+            flex-shrink: 0;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+        }
+
+        .slide-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .slide-text {
+            font-size: 0.78rem;
+            opacity: 0.75;
+        }
+
+        @keyframes train-left {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes train-right {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .navbar-inner {
+                padding-inline: 14px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+
+            .slide {
+                width: 180px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <div class="logo">
+                <div class="logo-mark">WA</div>
+                <span>Web Agency</span>
+            </div>
+            <nav class="nav-links">
+                <a>Services</a>
+                <a>Work</a>
+                <a>Pricing</a>
+                <a>Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero">
+            <div class="eyebrow">
+                <div class="eyebrow-dot"></div>
+                <span>Welcome to Web Agency</span>
+            </div>
+
+            <h1 class="hero-title">
+                We design & build <span class="highlight">modern websites</span> that convert.
+            </h1>
+
+            <p class="hero-desc">
+                From concept to launch, our team helps you create clean, fast and conversion-focused web experiences.
+                Perfect for startups, agencies and brands that want to stand out online.
+            </p>
+
+            <div class="hero-actions">
+                <button class="btn-primary">Get a Free Quote</button>
+                <button class="btn-ghost">View Our Work</button>
+            </div>
+        </section>
+
+        <!-- DOUBLE INFINITY TRAINS BELOW HERO -->
+        <section class="trains-section">
+            <div class="train-label">Featured services (left → right)</div>
+            <div class="slider-wrapper">
+                <div class="track-left">
+                    <!-- GROUP 1 -->
+                    <div class="slide">
+                        <div class="slide-title">Landing Page Design</div>
+                        <div class="slide-text">High-converting hero, sections & CTAs.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Full Website Build</div>
+                        <div class="slide-text">Custom, responsive, SEO-friendly sites.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">eCommerce Setup</div>
+                        <div class="slide-text">Shop, cart, checkout – ready to sell.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Brand UI Kit</div>
+                        <div class="slide-text">Colors, components and layouts.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Performance Boost</div>
+                        <div class="slide-text">Speed, Core Web Vitals & audits.</div>
+                    </div>
+
+                    <!-- GROUP 2 (same again for infinite loop) -->
+                    <div class="slide">
+                        <div class="slide-title">Landing Page Design</div>
+                        <div class="slide-text">High-converting hero, sections & CTAs.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Full Website Build</div>
+                        <div class="slide-text">Custom, responsive, SEO-friendly sites.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">eCommerce Setup</div>
+                        <div class="slide-text">Shop, cart, checkout – ready to sell.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Brand UI Kit</div>
+                        <div class="slide-text">Colors, components and layouts.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Performance Boost</div>
+                        <div class="slide-text">Speed, Core Web Vitals & audits.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="train-label">Client results (right → left)</div>
+            <div class="slider-wrapper">
+                <div class="track-right">
+                    <!-- GROUP 1 -->
+                    <div class="slide">
+                        <div class="slide-title">+120% more leads</div>
+                        <div class="slide-text">SaaS brand after new website.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">3x faster loading</div>
+                        <div class="slide-text">Optimized images & code.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Global audience</div>
+                        <div class="slide-text">Multi-language site rollout.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Higher ROI</div>
+                        <div class="slide-text">Better tracking & landing pages.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Brand refresh</div>
+                        <div class="slide-text">Modern UI for legacy business.</div>
+                    </div>
+
+                    <!-- GROUP 2 (same again) -->
+                    <div class="slide">
+                        <div class="slide-title">+120% more leads</div>
+                        <div class="slide-text">SaaS brand after new website.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">3x faster loading</div>
+                        <div class="slide-text">Optimized images & code.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Global audience</div>
+                        <div class="slide-text">Multi-language site rollout.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Higher ROI</div>
+                        <div class="slide-text">Better tracking & landing pages.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-title">Brand refresh</div>
+                        <div class="slide-text">Modern UI for legacy business.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
