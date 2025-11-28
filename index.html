@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AuraUI • by AKASH</title>
+    <title>AuraUI | by AKASH</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collection.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
 </head>
@@ -14,24 +16,141 @@
 
     <!-- Header -->
     <header class="header">
-        <!-- <h1 class="logo">Au<span class="brand">ra</span>UI</h1> -->
         <h1 class="logo"><span class="highlight">AuraUI</span></h1>
 
-        <nav class="nav">
-            <div class="links">
-                <ul class="menu">
-                    <li><a href="#" class="menu-link active">Home</a></li>
-                    <li><a href="#" class="menu-link">Components</a></li>
-                    <li><a href="#" class="menu-link">Templates</a></li>
-                    <li><a href="#" class="menu-link">Documentation</a></li>
-                </ul>
-            </div>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a class="nav-link">Home</a></li>
+
+                <!-- ELEMENTS DROPDOWN -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link">
+                        Elements
+                        <span class="arrow">▼</span>
+                    </a>
+
+                    <!-- DROPDOWN PANEL -->
+                    <div class="dropdown-panel">
+                        <div class="panel-left">
+                            <div class="grid">
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-solid fa-book"></i>
+                                        <span>All</span>
+                                    </div>
+                                    <div class="item-number">2572</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-regular fa-square-check"></i>
+                                        <span>Checkboxes</span>
+                                    </div>
+                                    <div class="item-number">312</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-regular fa-credit-card"></i>
+                                        <span>Cards</span>
+                                    </div>
+                                    <div class="item-number">1367</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-solid fa-keyboard"></i>
+                                        <span>Inputs</span>
+                                    </div>
+                                    <div class="item-number">360</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-regular fa-clipboard"></i>
+                                        <span>Forms</span>
+                                    </div>
+                                    <div class="item-number">244</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-solid fa-circle-info"></i>
+                                        <span>Tooltips</span>
+                                    </div>
+                                    <div class="item-number">130</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-solid fa-circle-dot"></i>
+                                        <span>Buttons</span>
+                                    </div>
+                                    <div class="item-number">2572</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-solid fa-toggle-on"></i>
+                                        <span>Toggle switches</span>
+                                    </div>
+                                    <div class="item-number">413</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-regular fa-dot-circle"></i>
+                                        <span>Radio Buttons</span>
+                                    </div>
+                                    <div class="item-number">186</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                                        <span>Patterns</span>
+                                    </div>
+                                    <div class="item-number">268</div>
+                                </a>
+
+                                <a href="#" class="item">
+                                    <div class="item-left">
+                                        <i class="icon fa-regular fa-heart"></i>
+                                        <span>My Favorites</span>
+                                    </div>
+                                </a>
+
+
+                            </div>
+                        </div>
+
+                        <!-- RIGHT SIDE CARD -->
+                        <div class="panel-right">
+                            <img src="/assets/icon/3d-astronaut-on-clear-background-free-png.webp" alt="logo">
+                            <h2>We're on Social Media!</h2>
+                            <p>Follow us to find out about new updates and posts</p>
+
+                            <div class="socials">
+                                <button><i class="fa-brands fa-discord"></i></button>
+                                <button><i class="fa-solid fa-xmark"></i></button>
+                                <button><i class="fa-brands fa-instagram"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="nav-item"><a class="nav-link">Components</a></li>
+                <li class="nav-item"><a class="nav-link">Templates</a></li>
+            </ul>
             <div class="header-buttons">
                 <a href="#" class="btn login-btn">Login</a>
                 <a href="#" class="btn explore-btn">Explore</a>
             </div>
-
         </nav>
+
     </header>
 
     <!-- Main -->
@@ -99,142 +218,65 @@
 
             </div>
         </section>
-
-        <!-- Top Collection -->
+        <!-- Elements Section -->
         <section class="top-collection">
-            <div class="heading">
-                <h2 class="top-collection-heading">
-                    Our <span class="highlight">Top</span> Collection
-                </h2>
-            </div>
-
-            <div class="top-collection-grid">
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+            <h2 class="top-collection-heading">Our <span class="highlight">Top </span>Collection</h2>
+            <div class="top-collection-card-grid">
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
-                <div class="collection-card">
-                    <img src="/assets/image/download.jpg" alt="top-collection">
-
-                    <div class="card-info">
-                        <h3 class="card-title">Portfolio Template</h3>
-
-                        <div class="card-actions">
-                            <button class="btn-preview">Preview</button>
-                            <button class="btn-code">Get Code</button>
-                        </div>
-                    </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
+                </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
+                </div>
+                <div class="top-collection-card">
+                    <button class="showBtn">Hover ME</button>
+                    <button class="codeBtn">Get Code</button>
                 </div>
             </div>
-
-            <div class="top-collection-btn">
-                <button class="viewBtn">View More</button>
-            </div>
+            
+            <button class="viewBtn">View More <i class="fa-solid fa-arrow-right"></i>
+            </button>
         </section>
+
+
     </main>
 
     <footer class="footer">
